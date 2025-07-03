@@ -17,8 +17,8 @@ FROM python:3.13-alpine
 
 WORKDIR /app
 
-RUN addgroup -g 1000 radicale \
-    && adduser radicale --home /var/lib/radicale --system --uid 1000 --disabled-password -G radicale \
+RUN addgroup -g 1001 radicale \
+    && adduser radicale --home /var/lib/radicale --system --uid 1001 --disabled-password -G radicale \
     && apk add --no-cache ca-certificates openssl
 
 COPY --chown=radicale:radicale --from=builder /app/venv /app
