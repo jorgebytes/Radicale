@@ -164,7 +164,6 @@ jobs:
       - name: Start test application and wait for it to be ready
         run: |
           mkdir data
-          mkdir config
 
           docker run -d \
             --name test-app \
