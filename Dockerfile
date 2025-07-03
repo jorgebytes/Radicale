@@ -1,6 +1,6 @@
 # This file is intended to be used apart from the containing source code tree.
 
-FROM python:3-alpine AS builder
+FROM python:3.13-alpine AS builder
 
 # Version of Radicale (e.g. v3)
 ARG VERSION=master
@@ -13,7 +13,7 @@ RUN apk add --no-cache --virtual gcc libffi-dev musl-dev \
     && /app/venv/bin/pip install --no-cache-dir "Radicale[${DEPENDENCIES}] @ https://github.com/Kozea/Radicale/archive/${VERSION}.tar.gz"
 
 
-FROM python:3-alpine
+FROM python:3.13-alpine
 
 WORKDIR /app
 
